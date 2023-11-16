@@ -44,8 +44,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   void initPrint(BuildContext context, String deviceUUID) {
-    // You can add more language options other than ZPL and BZPL/ZPL II for printers
-    // that don't support them.
     String orderDetails = '''
   Nama Barang        Qty    Harga
   Ini berisi deskripsi Nama Bara
@@ -68,7 +66,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        title: const Text("Wise Bluetooth Print"),
+        title: const Text("Bluetooth Print"),
       ),
       body: Padding(
           padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -91,14 +89,10 @@ class _MyAppState extends State<MyApp> {
                         children: [
                           ListTile(
                             title: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text('Cetak Nota')
-                                  // Text(_devices[index].name),
-                                  // Text(_devices[index].hardwareAddress)
                                 ]),
-                            // subtitle: Text(_devices[index].socketId),
                           )
                         ],
                       ),
