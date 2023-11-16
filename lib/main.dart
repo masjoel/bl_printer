@@ -78,7 +78,7 @@ class _MyAppState extends State<MyApp> {
                   return GestureDetector(
                     onTap: () => initPrint(context, _devices[index].socketId),
                     child: Card(
-                      color: const Color.fromARGB(255, 245, 247, 249),
+                      color: const Color.fromARGB(255, 7, 70, 147),
                       shadowColor: const Color.fromARGB(255, 11, 90, 186),
                       elevation: 1,
                       shape: RoundedRectangleBorder(
@@ -91,7 +91,9 @@ class _MyAppState extends State<MyApp> {
                             title: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text('Cetak Nota')
+                                  Icon(Icons.print, color: Color.fromARGB(255, 250, 248, 248)),
+                                  SizedBox(width: 10),
+                                  Text('Cetak Nota', style: TextStyle(color: Color.fromARGB(255, 250, 248, 248))),
                                 ]),
                           )
                         ],
