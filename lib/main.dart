@@ -60,60 +60,26 @@ class _MyAppState extends State<MyApp> {
 
     String printTest = "     Nota Order Barang\n"
         "$orderDetails";
-    // String printTextZPL = "^XA"
-    //     "^LH55,30"
-    //     "^FO20,10^CFD,27,13^FDNota Order Barang^FS"
-    //     "^FO20,60^AD^FD$orderDetails^FS"
-    //     "^FO40,160^BY2,2.0^BCN,100,Y,N,N,N^FD<PART,-1>^FS"
-    //     "^XZ";
-
-    // String printTextBZPL = "^XA"
-    //     "^FO50,50^ADN,18,10,^FDCompany Name^FS"
-    //     "^FO50,80^ADN,18,10,^FDCompany Address^FS"
-    //     "^FO50,135^ADN,18,10,^FDExample text^FS"
-    //     "^FO50,165^ADN,18,10,^FDMore example text^FS"
-    //     "^FO50,165^ADN,18,10,^FDNota Order Barang^FS"
-    //     "^FO50,165^ADN,18,10,^FD$orderDetails^FS"
-    //     "^FO50,220^ADN,18,10,^FD2022-09-01T16:36:35Z^FS"
-    //     "^XZ";
-
-    showDialog(
-      context: context,
-      builder: (builder) => AlertDialog(
-        // title: const Text(""),
-        // content: const Text(""),
-        actions: [
-          // TextButton(
-          //   onPressed: () async {
-          //     await WiseBluetoothPrint.print(deviceUUID, printTextZPL);
-          //     // ignore: use_build_context_synchronously
-          //     Navigator.of(context).pop();
-          //   },
-          //   child: const Text("ZPL"),
-          // ),
-          // TextButton(
-          //   onPressed: () async {
-          //     await WiseBluetoothPrint.print(deviceUUID, printTextBZPL);
-          //     // ignore: use_build_context_synchronously
-          //     Navigator.of(context).pop();
-          //   },
-          //   child: const Text("B-ZPL/ZPL II"),
-          // ),
-          TextButton(
-            onPressed: () async {
-              await WiseBluetoothPrint.print(deviceUUID, printTest);
-              // ignore: use_build_context_synchronously
-              Navigator.of(context).pop();
-            },
-            child: const Text("Cetak Nota"),
-          ),
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text("Close", style: TextStyle(color: Colors.red)),
-          ),
-        ],
-      ),
-    );
+    WiseBluetoothPrint.print(deviceUUID, printTest);
+    // showDialog(
+    //   context: context,
+    //   builder: (builder) => AlertDialog(
+    //     actions: [
+    //       ElevatedButton(
+    //         onPressed: () async {
+    //           await WiseBluetoothPrint.print(deviceUUID, printTest);
+    //           // ignore: use_build_context_synchronously
+    //           Navigator.of(context).pop();
+    //         },
+    //         child: const Text("Cetak Nota"),
+    //       ),
+    //       ElevatedButton(
+    //         onPressed: () => Navigator.of(context).pop(),
+    //         child: const Text("Batal", style: TextStyle(color: Colors.red)),
+    //       ),
+    //     ],
+    //   ),
+    // );
   }
 
   @override
