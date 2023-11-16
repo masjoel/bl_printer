@@ -58,28 +58,9 @@ class _MyAppState extends State<MyApp> {
   Total           6    325.000
   ''';
 
-    String printTest = "     Nota Order Barang\n"
+    String printTest = "Nota Order Barang\n"
         "$orderDetails";
     WiseBluetoothPrint.print(deviceUUID, printTest);
-    // showDialog(
-    //   context: context,
-    //   builder: (builder) => AlertDialog(
-    //     actions: [
-    //       ElevatedButton(
-    //         onPressed: () async {
-    //           await WiseBluetoothPrint.print(deviceUUID, printTest);
-    //           // ignore: use_build_context_synchronously
-    //           Navigator.of(context).pop();
-    //         },
-    //         child: const Text("Cetak Nota"),
-    //       ),
-    //       ElevatedButton(
-    //         onPressed: () => Navigator.of(context).pop(),
-    //         child: const Text("Batal", style: TextStyle(color: Colors.red)),
-    //       ),
-    //     ],
-    //   ),
-    // );
   }
 
   @override
@@ -99,20 +80,23 @@ class _MyAppState extends State<MyApp> {
                   return GestureDetector(
                     onTap: () => initPrint(context, _devices[index].socketId),
                     child: Card(
+                      color: const Color.fromARGB(255, 245, 247, 249),
+                      shadowColor: const Color.fromARGB(255, 11, 90, 186),
                       elevation: 1,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5),
                       ),
-                      child: Column(
+                      child: const Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           ListTile(
                             title: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.center,
                                 children: [
-                                  Text(_devices[index].name),
-                                  Text(_devices[index].hardwareAddress)
+                                  Text('Cetak Nota')
+                                  // Text(_devices[index].name),
+                                  // Text(_devices[index].hardwareAddress)
                                 ]),
                             // subtitle: Text(_devices[index].socketId),
                           )
@@ -126,5 +110,4 @@ class _MyAppState extends State<MyApp> {
               })),
     ));
   }
-
 }
